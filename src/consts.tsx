@@ -1,0 +1,1 @@
+export const containerMantineSize: "xs" | "sm" | "md" | "lg" | "xl" = "lg";
