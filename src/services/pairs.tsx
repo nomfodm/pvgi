@@ -8,7 +8,7 @@ class PairsService {
         const url = import.meta.env.VITE_PAIRS_STORAGE_URL;
         
         try {
-            const response = await axios.get<Pair[]>(url);
+            const response = await axios.get<Pair[]>(url, {params: {time: new Date().getTime()}});
 
             store.dispatch(pairsStateActions.retrievePairs(response.data));
         } catch (e) {
