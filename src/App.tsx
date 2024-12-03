@@ -1,12 +1,13 @@
 import Header from "./components/header/Header.tsx";
 import {useEffect} from "react";
-import {Container, Flex, Text} from "@mantine/core";
+import {Container, Flex, rem, Text} from "@mantine/core";
 import {containerMantineSize} from "./consts.tsx";
 import DuoCard from "./components/duo/DuoCard.tsx";
 import TrioCard from "./components/trio/TrioCard.tsx";
 import pairsService from "./services/pairs.tsx";
 import {useAppSelector} from "./store/hooks.tsx";
 import {PairType} from "./types.tsx";
+import Footer from "./components/footer/Footer.tsx";
 
 export default function App() {
     const pairsState = useAppSelector(state => state.pairsReducer)
@@ -23,9 +24,9 @@ export default function App() {
     return (
         <>
             <Header/>
-            <Container mb={"lg"} mt={"lg"} size={containerMantineSize}>
+            <Container mt={"lg"} size={containerMantineSize}>
                 {pairsState.retrieved &&
-                    <Flex gap={"lg"} direction="column">
+                    <Flex gap={rem(50)} direction="column">
                         {pairsState.pairs.map((pair, id) => {
                             const pairData = pair.pair;
                             if (pair.type == PairType.DUO) {
@@ -67,6 +68,7 @@ export default function App() {
                 </>
                 }
             </Container>
+            <Footer/>
         </>
     )
 }
