@@ -32,7 +32,11 @@ export default function App() {
                                 return <DuoCard key={id} duo={{
                                     leftImageUrl: pairData.leftImageUrl,
                                     separatorImageUrl: pairData.separatorImageUrl,
-                                    rightImageUrl: pairData.rightImageUrl
+                                    rightImageUrl: pairData.rightImageUrl,
+
+                                    labelLeft: pairData.labelLeft,
+                                    labelRight: pairData.labelRight,
+                                    labelCenter: pairData.labelCenter,
                                 }}/>;
                             }
                             if (pair.type == PairType.TRIO) {
@@ -42,6 +46,10 @@ export default function App() {
                                     centerImageUrl: pairData.centerImageUrl,
                                     separator2ImageUrl: pairData.separator2ImageUrl,
                                     rightImageUrl: pairData.rightImageUrl,
+
+                                    labelLeft: pairData.labelLeft,
+                                    labelRight: pairData.labelRight,
+                                    labelCenter: pairData.labelCenter,
                                 }}/>;
                             }
                         })}
