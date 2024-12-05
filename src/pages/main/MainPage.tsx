@@ -1,15 +1,13 @@
-import Header from "./components/header/Header.tsx";
 import {useEffect} from "react";
 import {Container, Flex, rem, Text} from "@mantine/core";
-import {containerMantineSize} from "./consts.tsx";
-import DuoCard from "./components/duo/DuoCard.tsx";
-import TrioCard from "./components/trio/TrioCard.tsx";
-import pairsService from "./services/pairs.tsx";
-import {useAppSelector} from "./store/hooks.tsx";
-import {PairType} from "./types.tsx";
-import Footer from "./components/footer/Footer.tsx";
+import {containerMantineSize} from "../../consts.tsx";
+import DuoCard from "../../components/duo/DuoCard.tsx";
+import TrioCard from "../../components/trio/TrioCard.tsx";
+import pairsService from "../../services/pairs.tsx";
+import {useAppSelector} from "../../store/hooks.tsx";
+import {PairType} from "../../types.tsx";
 
-export default function App() {
+export default function MainPage() {
     const pairsState = useAppSelector(state => state.pairsReducer)
 
     useEffect(() => {
@@ -18,12 +16,11 @@ export default function App() {
         }
 
         document.title = "ПВГИ";
-        wrapper()
+        wrapper();
     }, []);
 
     return (
         <>
-            <Header/>
             <Container mt={"lg"} size={containerMantineSize}>
                 {pairsState.retrieved &&
                     <Flex gap={rem(50)} direction="column">
@@ -68,7 +65,6 @@ export default function App() {
                 </>
                 }
             </Container>
-            <Footer/>
         </>
     )
 }
