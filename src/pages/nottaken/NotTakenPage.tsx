@@ -1,8 +1,12 @@
 import {Container, rem, Flex} from "@mantine/core";
 import {containerMantineSize} from "../../consts.tsx";
 import SoloCard from "../../components/solo/SoloCard.tsx";
+import { useEffect } from "react";
 
 export default function NotTakenPage() {
+  useEffect(() => {
+    document.title = "ПВГИ";
+  }, []);
     return (
         <>
             <Container mt={"lg"} size={containerMantineSize}>
