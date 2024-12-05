@@ -29,3 +29,8 @@ export interface Pair {
     type: PairType;
     pair: Duo & Trio;
 }
+
+export interface Solo {
+    imageUrl: string;
+    description: string;
+}
